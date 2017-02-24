@@ -78,19 +78,12 @@ class FbBot():
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--a", help="status or likes?")
-    parser.add_argument('--u', help="Username")
-    parser.add_argument('--p', help="Password")
+    parser.add_argument("--a", help="status or likes?", required=True)
+    parser.add_argument('--u', help="Username", required=True)
+    parser.add_argument('--p', help="Password", required=True)
     parser.add_argument('--as', help="Password")
 
     args = parser.parse_args()
-
-    if not args.a:
-        exit("Please specify status or likes to automate using --a=parameter(status/likes)")
-    if not args.u:
-        exit("Please specify FB username using --u=parameter")
-    if not args.p:
-        exit("Please specify FB password using --p=parameter")
 
     try:
 
